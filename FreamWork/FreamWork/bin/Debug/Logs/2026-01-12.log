@@ -1,0 +1,173 @@
+﻿[2026-01-12 18:44:31] INFO       アプリ起動
+============================================================
+[2026-01-12 18:44:31] EXCEPTION
+Context: LecturePlanService.ExecuteInTransaction
+Message: オブジェクト名 'LecturePlan' が無効です。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 52
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 59
+   場所 FreamWork.LecturePlanService.ExecuteBusinessLogic(SqlExecutor exec, ServiceOperation op) 場所 C:\開発２\FW3\FreamWork\FreamWork\LecturePlanService.vb:行 31
+   場所 FreamWork.BaseService.ExecuteInTransaction(ServiceOperation op) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseService.vb:行 20
+============================================================
+
+[2026-01-12 18:45:00] INFO       アプリ起動
+============================================================
+[2026-01-12 18:51:08] EXCEPTION
+Context: LecturePlanService.ExecuteInTransaction
+Message: timestamp 列に明示的な値を挿入できません。timestamp 列を除外する列リストを指定して INSERT を使用するか、timestamp 列に DEFAULT を挿入してください。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 52
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 59
+   場所 FreamWork.LecturePlanService.ExecuteBusinessLogic(SqlExecutor exec, ServiceOperation op) 場所 C:\開発２\FW3\FreamWork\FreamWork\LecturePlanService.vb:行 31
+   場所 FreamWork.BaseService.ExecuteInTransaction(ServiceOperation op) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseService.vb:行 20
+============================================================
+
+[2026-01-12 18:54:36] INFO       アプリ起動
+[2026-01-12 18:59:17] INFO       アプリ起動
+[2026-01-12 19:00:58] OPERATION  Operation=Insert, Entity=LecturePlanEntity, ID=0, User=user
+[2026-01-12 19:04:49] OPERATION  Operation=Insert, Entity=LectureActualEntity, ID=0, User=user
+[2026-01-12 19:10:13] INFO       アプリ終了
+============================================================
+[2026-01-12 22:12:13] EXCEPTION
+Context: ImportServiceExceptionImportServiceException
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 64
+   場所 FreamWork.CSVImportDomainService.Process(String csvPath) 場所 C:\開発２\FW3\FreamWork\FreamWork\CSVImportDomainService.vb:行 57
+============================================================
+
+============================================================
+[2026-01-12 22:47:04] EXCEPTION
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 68
+============================================================
+
+------------------------------------------------------------
+[2026-01-12 22:47:05]
+[SQL]: INSERT INTO LecturePlan(LectureDate,TeacherCode,SubjectCode,Status,ActualHours)
+VALUES('2025/12/01 0:00:00','K001','AA',0,1000)
+
+============================================================
+[2026-01-12 22:49:27] EXCEPTION
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 68
+============================================================
+
+------------------------------------------------------------
+[2026-01-12 22:49:27]
+[SQL]: INSERT INTO LecturePlan(LectureDate,TeacherCode,SubjectCode,Status,ActualHours) VALUES ('2025/12/01 0:00:00','K001','AA',0,1000)
+
+============================================================
+[2026-01-12 22:52:14] EXCEPTION
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 68
+============================================================
+
+------------------------------------------------------------
+[2026-01-12 22:52:14][SQL]: INSERT INTO LecturePlan(LectureDate,TeacherCode,SubjectCode,Status,ActualHours) VALUES ('2025/12/01 0:00:00','K001','AA',0,1000)
+
+============================================================
+[2026-01-12 22:54:48] EXCEPTION
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 68
+============================================================
+
+------------------------------------------------------------
+[2026-01-12 22:54:48]	[SQL]:	INSERT INTO LecturePlan(LectureDate,TeacherCode,SubjectCode,Status,ActualHours) VALUES ('2025/12/01 0:00:00','K001','AA',0,1000)
+
+[2026-01-12 23:06:58]	EXCEPTION	
+Message: numeric をデータ型 numeric に変換中に、算術オーバーフロー エラーが発生しました。
+ステートメントは終了されました。
+Type: System.Data.SqlClient.SqlException
+StackTrace:
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   場所 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   場所 FreamWork.SqlExecutor.ExecuteNonQuery(String sql, List`1 parameters) 場所 C:\開発２\FW3\FreamWork\FreamWork\SqlExecutor.vb:行 53
+   場所 FreamWork.BaseRepository`1.Insert(T entity) 場所 C:\開発２\FW3\FreamWork\FreamWork\BaseRepository.vb:行 68
+
+
+[2026-01-12 23:06:58]	[SQL]:	INSERT INTO LecturePlan(LectureDate,TeacherCode,SubjectCode,Status,ActualHours) VALUES ('2025/12/01 0:00:00','K001','AA',0,1000)
+

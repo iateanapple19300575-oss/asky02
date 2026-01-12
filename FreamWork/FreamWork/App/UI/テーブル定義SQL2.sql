@@ -1,0 +1,66 @@
+CREATE TABLE dbo.LecturePlan (
+    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    LectureDate DATE NOT NULL,
+    TeacherCode NVARCHAR(20) NOT NULL,
+    SubjectCode NVARCHAR(20) NOT NULL,
+
+    Status INT NOT NULL DEFAULT 0,          -- 0=未実施, 1=完了
+    ActualHours DECIMAL(5,2) NOT NULL DEFAULT 0,
+
+    -- 監査列（BaseEntity）
+    Create_Date DATETIME NOT NULL DEFAULT GETDATE(),
+    Create_User NVARCHAR(50) NOT NULL DEFAULT SYSTEM_USER,
+    Update_Date DATETIME NOT NULL DEFAULT GETDATE(),
+    Update_User NVARCHAR(50) NOT NULL DEFAULT SYSTEM_USER,
+
+    -- 楽観的ロック
+    RowVersion ROWVERSION
+);
+
+-- よく使う検索条件にインデックスを追加
+CREATE INDEX IX_LecturePlan_Date ON dbo.LecturePlan (LectureDate);
+CREATE INDEX IX_LecturePlan_Teacher ON dbo.LecturePlan (TeacherCode);
+CREATE INDEX IX_LecturePlan_Subject ON dbo.LecturePlan (SubjectCode);
+
+
+
+
+
+
+CREATE TABLE dbo.LectureActual (
+    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    LectureDate DATE NOT NULL,
+    TeacherCode NVARCHAR(20) NOT NULL,
+    SubjectCode NVARCHAR(20) NOT NULL,
+
+    LectureHours DECIMAL(5,2) NOT NULL,
+    Remarks NVARCHAR(200) NULL,
+
+    RoomCode NVARCHAR(20) NULL,
+    CourseCode NVARCHAR(20) NULL,
+
+    -- 監査列（BaseEntity）
+    Create_Date DATETIME NOT NULL DEFAULT GETDATE(),
+    Create_User NVARCHAR(50) NOT NULL DEFAULT SYSTEM_USER,
+    Update_Date DATETIME NOT NULL DEFAULT GETDATE(),
+    Update_User NVARCHAR(50) NOT NULL DEFAULT SYSTEM_USER,
+
+    -- 楽観的ロック
+    RowVersion ROWVERSION
+);
+
+-- よく使う検索条件にインデックスを追加
+CREATE INDEX IX_LectureActual_Date ON dbo.LectureActual (LectureDate);
+CREATE INDEX IX_LectureActual_Teacher ON dbo.LectureActual (TeacherCode);
+CREATE INDEX IX_LectureActual_Subject ON dbo.LectureActual (SubjectCode);
+
+CREATE TABLE ImportHistory (
+    ID INT IDENTITY PRIMARY KEY,
+    TableName NVARCHAR(50),
+    FilePath NVARCHAR(200),
+    ImportCount INT,
+    ImportDate DATETIME
+);
+
