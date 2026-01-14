@@ -1,0 +1,73 @@
+﻿SELECT
+    d.TargetDate,
+    d.School,
+    d.Grade,
+    d.Class,
+    d.Koma,
+
+    CONVERT(CHAR (5), COALESCE(
+        m3d.StartTime,
+        m3m.StartTime,
+        m3y.StartTime,
+        m2.StartTime,
+        m1.StartTime
+    )) AS StartTime,
+
+    CONVERT(CHAR (5), COALESCE(
+        m3d.EndTime,
+        m3m.EndTime,
+        m3y.EndTime,
+        m2.EndTime,
+        m1.EndTime
+    )) AS EndTime
+
+FROM DailyData d
+
+-- 年月日
+LEFT JOIN Master3 m3d
+    ON  m3d.School = d.School
+    AND m3d.Grade  = d.Grade
+    AND m3d.Class  = d.Class
+    AND m3d.Koma   = d.Koma
+    AND m3d.PeriodType = 3
+    AND m3d.PeriodValue = CONVERT(char(10), d.TargetDate, 120)   -- YYYY-MM-DD
+
+-- 年月
+LEFT JOIN Master3 m3m
+    ON  m3m.School = d.School
+    AND m3m.Grade  = d.Grade
+    AND m3m.Class  = d.Class
+    AND m3m.Koma   = d.Koma
+    AND m3m.PeriodType = 2
+    AND m3m.PeriodValue = LEFT(CONVERT(char(10), d.TargetDate, 120), 7)  -- YYYY-MM
+
+-- 年
+LEFT JOIN Master3 m3y
+    ON  m3y.School = d.School
+    AND m3y.Grade  = d.Grade
+    AND m3y.Class  = d.Class
+    AND m3y.Koma   = d.Koma
+    AND m3y.PeriodType = 1
+    AND m3y.PeriodValue = LEFT(CONVERT(char(10), d.TargetDate, 120), 4)  -- YYYY
+
+LEFT JOIN Master2 m2
+    ON  m2.School = d.School
+    AND m2.Grade  = d.Grade
+    AND m2.Class  = d.Class
+    AND m2.Koma   = d.Koma
+
+LEFT JOIN Master1 m1
+    ON  m1.School = d.School
+    AND m1.Koma   = d.Koma
+    AND m1.WeekPattern = DATEPART(weekday, d.TargetDate)
+
+WHERE 1=1
+    AND d.TargetDate  >= '2024/04/01'
+    AND d.TargetDate  <= EOMONTH('2024/04/01', 0)
+
+ORDER BY 
+    d.TargetDate,
+    d.School,
+    d.Grade,
+    d.Class,
+    d.Koma
