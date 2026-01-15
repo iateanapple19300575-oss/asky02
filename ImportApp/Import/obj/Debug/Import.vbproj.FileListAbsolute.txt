@@ -1,0 +1,11 @@
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.vbproj.AssemblyReference.cache
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.Form1.resources
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.Resources.resources
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.vbproj.GenerateResource.cache
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.vbproj.CoreCompileInputs.cache
+C:\開発２\FW5\ImportApp\Import\bin\Debug\Import.exe
+C:\開発２\FW5\ImportApp\Import\bin\Debug\Import.pdb
+C:\開発２\FW5\ImportApp\Import\bin\Debug\Import.xml
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.exe
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.xml
+C:\開発２\FW5\ImportApp\Import\obj\Debug\Import.pdb

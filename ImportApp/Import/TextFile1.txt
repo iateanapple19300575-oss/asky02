@@ -1,0 +1,65 @@
+﻿CREATE TABLE LessonWork (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    TeacherId INT NOT NULL,
+    WorkDate DATE NOT NULL,
+    StartTime DATETIME NOT NULL,
+    EndTime DATETIME NOT NULL,
+    Subject NVARCHAR(100) NULL,
+    Classroom NVARCHAR(50) NULL
+);
+
+-- 検索高速化（重複チェック用）
+CREATE INDEX IX_LessonWork_TeacherDate
+    ON LessonWork (TeacherId, WorkDate, StartTime, EndTime);
+
+
+-------------------------------------
+
+CREATE TABLE PreparationWork (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    TeacherId INT NOT NULL,
+    WorkDate DATE NOT NULL,
+    StartTime DATETIME NOT NULL,
+    EndTime DATETIME NOT NULL,
+    WorkType NVARCHAR(100) NULL,
+    Notes NVARCHAR(200) NULL
+);
+
+-- 検索高速化（重複チェック用）
+CREATE INDEX IX_PreparationWork_TeacherDate
+    ON PreparationWork (TeacherId, WorkDate, StartTime, EndTime);
+
+-------------------------------------
+
+INSERT INTO LessonWork (TeacherId, WorkDate, StartTime, EndTime, Subject, Classroom)
+VALUES
+(1, '2025-01-01', '2025-01-01 10:00', '2025-01-01 11:00', 'Math', '101'),
+(1, '2025-01-01', '2025-01-01 12:00', '2025-01-01 13:00', 'Science', '202');
+
+
+------------------------------------
+INSERT INTO PreparationWork (TeacherId, WorkDate, StartTime, EndTime, WorkType, Notes)
+VALUES
+(1, '2025-01-01', '2025-01-01 10:30', '2025-01-01 11:30', '資料作成', '授業準備'),
+(1, '2025-01-01', '2025-01-01 12:30', '2025-01-01 13:30', '教材準備', 'プリント作成');
+
+-------------------------------
+
+CREATE VIEW vwWork AS
+SELECT 
+    'Lesson' AS WorkType,
+    Id,
+    TeacherId,
+    WorkDate,
+    StartTime,
+    EndTime
+FROM LessonWork
+UNION ALL
+SELECT 
+    'Prep' AS WorkType,
+    Id,
+    TeacherId,
+    WorkDate,
+    StartTime,
+    EndTime
+FROM PreparationWork;

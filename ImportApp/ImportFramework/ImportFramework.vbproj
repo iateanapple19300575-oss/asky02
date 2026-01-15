@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E24DC91-4C73-4C96-B216-52998D6BB9FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ImportFramework.My.MyApplication</StartupObject>
+    <RootNamespace>ImportFramework</RootNamespace>
+    <AssemblyName>ImportFramework</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ImportFramework.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ImportFramework.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractCsvReader.vb" />
+    <Compile Include="AbstractProcessor.vb" />
+    <Compile Include="AbstractValidator.vb" />
+    <Compile Include="CsvAProcessor.vb" />
+    <Compile Include="CsvAReader.vb" />
+    <Compile Include="CsvAValidator.vb" />
+    <Compile Include="CsvBProcessor.vb" />
+    <Compile Include="CsvBReader.vb" />
+    <Compile Include="CsvBValidator.vb" />
+    <Compile Include="CsvImportComponents.vb" />
+    <Compile Include="CsvImportFactory.vb" />
+    <Compile Include="ErrorDetail.vb" />
+    <Compile Include="ErrorList.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ICsvImportComponents.vb" />
+    <Compile Include="ICsvReader.vb" />
+    <Compile Include="ImportApplicationService.vb" />
+    <Compile Include="ImportHistory.vb" />
+    <Compile Include="ImportResult.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProcessedRow.vb" />
+    <Compile Include="RawImportRow.vb" />
+    <Compile Include="SqlImportMaintenanceRepository.vb" />
+    <Compile Include="SqlImportMasterRepository.vb" />
+    <Compile Include="SqlImportProcessedRepository.vb" />
+    <Compile Include="SqlImportRawRepository.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LectPay.Application\ImportApplicationService\" />
+    <Folder Include="LectPay.Application\ImportResult\" />
+    <Folder Include="LectPay.UI.WinForms\FormImport\" />
+    <Folder Include="LectPay.UI.WinForms\FormMain\" />
+    <Folder Include="LectPay.UI.WinForms\ViewModel\" />
+    <Folder Include="LecturePay.Domain\Dto\Common\" />
+    <Folder Include="LecturePay.Domain\Dto\Import\History\" />
+    <Folder Include="LecturePay.Domain\Dto\Import\Master\" />
+    <Folder Include="LecturePay.Domain\Dto\Import\Processed\" />
+    <Folder Include="LecturePay.Domain\Dto\Import\Raw\" />
+    <Folder Include="LecturePay.Domain\Factory\" />
+    <Folder Include="LecturePay.Domain\Processor\" />
+    <Folder Include="LecturePay.Domain\Reader\" />
+    <Folder Include="LecturePay.Domain\Validator\" />
+    <Folder Include="LetcPay.Infrastructure\Connection\" />
+    <Folder Include="LetcPay.Infrastructure\Repository\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
